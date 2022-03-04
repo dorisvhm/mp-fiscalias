@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit">
+        
+    </persistence-unit>
+  <persistence-unit name="com.mp_MpWb_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <!--    <class>com.mp.mpwb.modelo.Departamento</class>
+        <class>com.mp.mpwb.modelo.Fiscalia</class>
+        <class>com.mp.mpwb.modelo.Municipio</class>-->
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=MP;encrypt=false;schema=dbo"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.password" value="Admin123."/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="com.mp_MpWb_war_1.0-SNAPSHOTPU2" transaction-type="JTA">
+      <jta-data-source>jdbc/sql</jta-data-source>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+   <properties>
+            <property name="eclipselink.logging.level.sql" value="WARNING"/>
+            <property name="eclipselink.logging.parameters" value="false"/>
+            <property name="eclipselink.jdbc.sequence-connection-pool" value="true"/>
+            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+            <property name="eclipselink.jdbc.batch-writing.size" value="800"/>
+        </properties>
+  </persistence-unit>
+</persistence>
